@@ -1,6 +1,4 @@
 :root {
-    --grid-cols: 1;
-    --grid-rows: 1;
     --primary-light: #ddd;
     --primary-dark: #333;
 }
@@ -25,26 +23,21 @@ main {
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: lightcoral;
 }
 
 #grid-cont {
     display: grid;
-    width: 50%;
-    height: 50%;
+    width: 500px;
+    height: 500px;
     justify-content: center;
     align-items: center;
     background-color: lightgreen;
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
 }
 
 .grid-item {
-    padding: 1em;
-    width: 1px;
-    height: 1px;
-    border: 1px solid var(--primary-dark);
-    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-light);
 }
 
 .grid-item:hover {

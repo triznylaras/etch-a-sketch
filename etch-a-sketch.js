@@ -1,11 +1,15 @@
+const DEFAULT_COLS = 16
+const DEFAULT_ROWS = 16
+
 var gridCont = document.getElementById("grid-cont");
 
-function makeRows(rows, cols) {
-    gridCont.style.setProperty('--grid-rows', rows);
-    gridCont.style.setProperty('--grid-cols', cols);
-    for (c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div");
+function setupGrid(rows, cols) {
+    gridCont.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
+    gridCont.style.gridTemplateRows = `repeat(${rows}, 1fr)`
+
+    for (let i = 0; i < rows * cols; i++) {
+        const cell = document.createElement('div')
         gridCont.appendChild(cell).className = "grid-item";
-    };
-};
-makeRows(16, 16);
+    }
+}
+setupGrid(DEFAULT_ROWS, DEFAULT_COLS);
