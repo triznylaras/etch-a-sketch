@@ -12,34 +12,34 @@ clearBtn.onclick = () => clearGrid()
 colorBtn.onclick = () => addColor()
 
 function setupGrid(rows, cols) {
-    gridCont.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
-    gridCont.style.gridTemplateRows = `repeat(${rows}, 1fr)`
+  gridCont.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
+  gridCont.style.gridTemplateRows = `repeat(${rows}, 1fr)`
 
-    for (let i = 0; i < rows * cols; i++) {
-        const cell = document.createElement('div')
-        cell.addEventListener('mouseover', changeColor)
-        gridCont.appendChild(cell).className = "grid-item";
-    }
+  for (let i = 0; i < rows * cols; i++) {
+    const cell = document.createElement('div')
+    cell.addEventListener('mouseover', changeColor)
+    gridCont.appendChild(cell).className = "grid-item";
+  }
 }
 
 function changeColor(cell) {
-    if (currentMode === 'color') {
-        cell.target.style.backgroundColor = currentColor
-    } else if (currentMode === 'eraser') {
-        cell.target.style.backgroundColor = 'white'
-    }
+  if (currentMode === 'color') {
+    cell.target.style.backgroundColor = currentColor
+  } else if (currentMode === 'eraser') {
+    cell.target.style.backgroundColor = 'white'
+  }
 }
 
 function clearGrid() {
-    gridCont.innerHTML = ''
-    currentMode = 'eraser'
-    setupGrid(DEFAULT_ROWS, DEFAULT_COLS)
+  gridCont.innerHTML = ''
+  currentMode = 'eraser'
+  setupGrid(DEFAULT_ROWS, DEFAULT_COLS)
 }
 
 function addColor() {
-    gridCont.innerHTML = ''
-    currentMode = 'color'
-    setupGrid(DEFAULT_ROWS, DEFAULT_COLS)
+  gridCont.innerHTML = ''
+  currentMode = 'color'
+  setupGrid(DEFAULT_ROWS, DEFAULT_COLS)
 }
 
 setupGrid(DEFAULT_ROWS, DEFAULT_COLS);

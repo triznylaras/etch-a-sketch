@@ -1,48 +1,48 @@
 :root {
-    --primary-light: #ddd;
-    --primary-dark: #333;
+  --primary-light: #ddd;
+  --primary-dark: #333;
 }
 
 h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
-    background-color: var(--primary-light);
-    color: var(--primary-dark);
-    font-family: Arial, Helvetica, sans-serif;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 #grid-cont {
-    display: grid;
-    width: 500px;
-    height: 500px;
-    justify-content: center;
-    align-items: center;
-    background: white;
+  display: grid;
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  background: white;
 }
 
 .grid-item {
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--primary-light);
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--primary-light);
 }
 
 .clear-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
