@@ -1,15 +1,18 @@
 const DEFAULT_COLS = 16
 const DEFAULT_ROWS = 16
+const DEFAULT_COLOR = 'gray'
 
-let currentColor = 'black'
+let currentColor = DEFAULT_COLOR
 let currentMode = 'color'
 
 var gridCont = document.getElementById("grid-cont");
 var clearBtn = document.getElementById("clear-btn");
 var colorBtn = document.getElementById("color-btn");
+var colorPicker = document.getElementById("color-picker");
 
 clearBtn.onclick = () => clearGrid()
-colorBtn.onclick = () => addColor()
+colorPicker.onclick = (e) => setCurrentColor(e.target.value)
+colorBtn.onclick = () => addColor(colorPicker.value)
 
 function setupGrid(rows, cols) {
   gridCont.style.gridTemplateColumns = `repeat(${cols}, 1fr)`
@@ -20,6 +23,11 @@ function setupGrid(rows, cols) {
     cell.addEventListener('mouseover', changeColor)
     gridCont.appendChild(cell).className = "grid-item";
   }
+}
+
+function setCurrentColor(newColor) {
+  currentColor = newColor
+  addColor()
 }
 
 function changeColor(cell) {
@@ -36,9 +44,9 @@ function clearGrid() {
   setupGrid(DEFAULT_ROWS, DEFAULT_COLS)
 }
 
-function addColor() {
-  gridCont.innerHTML = ''
+function addColor(color) {
   currentMode = 'color'
+  currentColor = color
   setupGrid(DEFAULT_ROWS, DEFAULT_COLS)
 }
 
