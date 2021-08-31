@@ -18,17 +18,19 @@ body {
 }
 
 main {
-  display: flex;
+  display: inline-table;
   justify-content: center;
   align-items: center;
+  margin: auto;
   height: 100%;
   width: 100%;
 }
 
 #grid-cont {
   display: grid;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
+  margin: auto;
   justify-content: center;
   align-items: center;
   background: white;
@@ -37,12 +39,44 @@ main {
 .grid-item {
   width: 100%;
   height: 100%;
-  border: 1px solid var(--primary-light);
 }
 
-.clear-btn {
+.clear-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#clear-btn {
+  display: flex;
+  padding: 5px 20px 5px 20px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.grid-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#color-picker {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#color-btn {
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px 20px 5px 20px;
 }
